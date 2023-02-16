@@ -122,13 +122,13 @@
 
                       <option value="Administrador">Administrador</option>
 
-                      <option value="Especial">Paramedico</option>
+                      <option value="Paramedico">Paramedico</option>
 
-                      <option value="Vendedor">Radio Operador</option>
+                      <option value="Radio Operador">Radio Operador</option>
 
-                      <option value="Vendedor">Radicador</option>
+                      <option value="Radicador">Radicador</option>
 
-                      <option value="Vendedor">Auxiliar</option>
+                      <option value="Auxiliar">Auxiliar</option>
 
               </select>
         
