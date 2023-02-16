@@ -55,8 +55,6 @@ session_start();
 <!-- SWEET ALERT2 -->
 <script src="vistas/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
-<!-- js personal -->
-<script src="vistas/js/index.js"></script>
 
 
 </head>
@@ -107,6 +105,9 @@ session_start();
 
 <!-- ./wrapper -->
 
+<!-- js propios del proyecto -->
+<script src="vistas/js/index.js"></script>
+<script src="vistas/js/usuarios.js"></script>
 
 
 </body>

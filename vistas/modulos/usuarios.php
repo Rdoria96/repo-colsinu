@@ -23,6 +23,8 @@
       <i class="fas fa-user-plus"></i> Crear usuario
     </button>
 
+    <!-- <button type="button" class="btn btn-success" id="prueba"> click </button> -->
+
     <div class="container-fluid mt-3">
       <div class="row">
         <div class="col-12">
@@ -64,8 +66,8 @@
                         <td>
 
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn btn-secondary btn-sm"> <i class="fas fa-user-edit"></i> </button>
-                            <button type="button" class="btn btn-danger btn-sm"> <i class="fas fa-user-times"></i> </button>
+                            <button class="btn btn-secondary btn-sm btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"> <i class="fas fa-user-edit"></i> </button>
+                            <button class="btn btn-danger btn-sm"> <i class="fas fa-user-times"></i> </button>
                       </div>
       
       
@@ -101,7 +103,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
 
-      <form role="form" method="post">
+      <form role="form" method="post" enctype="multipart/form-data">
 
           <div class="modal-header bg-secondary">
             <h4 class="modal-title fs-5" id="exampleModalLabel">  Agregar usuario  </h4>
@@ -165,6 +167,8 @@
           <button type="submit" class="btn btn-secondary">Guardar usuario</button>
             
           </div>
+
+          <!-- LLAMADO AL METODO CREAR USUARIO, UBICADO EN EL CONTROLADOR USUARIOS -->
           
         <?php
 
@@ -177,5 +181,91 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+<!-- MODAL EDITAR USUARIO -->
+
+<div class="modal fade" id="modalEditarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+          <div class="modal-header bg-secondary">
+            <h4 class="modal-title fs-5" id="exampleModalLabel">  Editar usuario  </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-id-card-alt"></i> </span>
+            </div>
+            <input type="text" class="form-control"  name="editarNombre" value="" required>
+          </div>
+
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-fingerprint"></i> </span>
+            </div>
+            <input type="text" class="form-control"  name="editarUsuario" value="" required>
+          </div>
+
+
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-key"></i> </span>
+            </div>
+            <input type="password" class="form-control" name="editarPassword" placeholder="Ingresar nueva contraseña" required>
+          </div>
+
+
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-key"></i> </span>
+            </div>
+            <select class="form-control input-lg" name="editarPerfil">
+                      
+                      <option value="" id="editarPerfil"></option>
+
+                      <option value="Administrador">Administrador</option>
+
+                      <option value="Paramedico">Paramedico</option>
+
+                      <option value="Radio Operador">Radio Operador</option>
+
+                      <option value="Radicador">Radicador</option>
+
+                      <option value="Auxiliar">Auxiliar</option>
+
+              </select>
+        
+          </div>
+
+
+          
+            
+          </div>
+          <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-secondary">Actualizar usuario</button>
+            
+          </div>
+
+          <!-- AQUI VA EL LAMADO AL METODO EDITAR USUARIO UBICADO EN EL CONTROLADOR DE USUARIOS -->
+
+          
+       
+
+      </form>
+    </div>
+  </div>
+</div>
+
 
 

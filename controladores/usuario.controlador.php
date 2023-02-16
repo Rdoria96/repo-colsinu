@@ -75,27 +75,29 @@ class ControladorUsuarios{
                 
                  $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
                  if($respuesta == "ok"){
+
                     echo '<script>
 
-					swal.fire({
-                        position: "bottom-end",
-                        icon: "success",
-                        title: "Usuario creado correctamente",
-                        showConfirmButton: false,
-                        timer: 2000
+                Swal.fire({
+                    icon: "success",
+                    title: "Exito!",
+                    text: "¡El usuario se ha creado correctamente!",
+                    confirmButtonColor: "#007bff",
+                    confirmButtonText: "Aceptar" ,
 
-					}).then(function(result){
+                }).then(function(result){
 
-						if(result.value){
-						
-							window.location = "usuarios";
+                    if(result.value){
+                    
+                        window.location = "usuarios";
 
-						}
+                    }
 
-					});
-				
+                });
+            
 
-					</script>';
+            </script>';
+                    
                  }
 
 
