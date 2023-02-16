@@ -21,13 +21,13 @@
           <span class="dropdown-item dropdown-header">En linea</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-          <i class="fas fa-user mr-2"></i> Alexander Pierce 
+          <i class="fas fa-user mr-2"></i> <?php echo $_SESSION["nombre"]?>
           <!-- debe venir de la bade datos -->
                      
           </a>
           
           <a href="#" class="dropdown-item">
-          <i class="fas fa-key mr-2"></i> Administrador
+          <i class="fas fa-key mr-2"></i> <?php echo $_SESSION["perfil"]?>
           <!-- debe venir de la bade datos -->
             
           </a>

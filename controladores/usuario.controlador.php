@@ -15,7 +15,12 @@ class ControladorUsuarios{
                     $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $usuario);
 
                     if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
+
                         $_SESSION["iniciarSesion"] = "ok";
+                        $_SESSION["id"] = $respuesta["id"];
+						$_SESSION["nombre"] = $respuesta["nombre"];
+						$_SESSION["usuario"] = $respuesta["usuario"];
+						$_SESSION["perfil"] = $respuesta["perfil"];
 
                         echo '<script>
 
