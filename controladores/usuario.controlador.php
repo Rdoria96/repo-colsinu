@@ -6,13 +6,15 @@ class ControladorUsuarios{
             if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
                 preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"]) ){
                      $tabla = "usuarios";
+                     $hash = '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$';
+                    $encriptar = crypt($_POST["ingPassword"], $hash);
 
                     $item = "usuario";
                     $usuario = $_POST["ingUsuario"];
 
                     $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $usuario);
 
-                    if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+                    if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
                         $_SESSION["iniciarSesion"] = "ok";
 
                         echo '<script>
@@ -55,9 +57,11 @@ class ControladorUsuarios{
 			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"])){
 
                 $tabla = "usuarios";
+                $hash = '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$';
+                $encriptar = crypt($_POST["nuevoPassword"], $hash);
                 $datos = array("nombre" => $_POST["nuevoNombre"],
 					           "usuario" => $_POST["nuevoUsuario"],
-					           "password" => $_POST["nuevoPassword"],
+					           "password" => $encriptar,
 					           "perfil" => $_POST["nuevoPerfil"]);
                 
                  $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
@@ -69,7 +73,7 @@ class ControladorUsuarios{
                         icon: "success",
                         title: "Usuario creado correctamente",
                         showConfirmButton: false,
-                        timer: 1800
+                        timer: 2000
 
 					}).then(function(result){
 
