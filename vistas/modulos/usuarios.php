@@ -38,25 +38,47 @@
                     <th>Acciones</th>
                   </tr>
                   </thead>
-                  <tbody >
-                  <tr>
-                    <td>1</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>
-                      <button class="btn btn-success btn-xs">Activado</button>
-                    </td>
-                    <td>Win 95+</td>
-                    <td>
-                      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                      <button type="button" class="btn btn-secondary btn-sm"> <i class="fas fa-user-edit"></i> </button>
-                      <button type="button" class="btn btn-danger btn-sm"> <i class="fas fa-user-times"></i> </button>
+                  <tbody>
+
+                    <?php
+                     $item = null;
+                     $valor = null;
+                      $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+                      foreach ($usuarios as $key => $value){
+                        echo '
+
+                        <tr>
+                        <td>'.($key+1).'</td>
+                        <td>'.$value["nombre"].'</td>
+                        <td>'.$value["usuario"].'</td>';
+                        echo '<td>'.$value["perfil"].'</td>';
+                        if($value["estado"] != 0){
+                          echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+                        }else{
+
+                          echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+      
+                        }  
+
+                        echo '<td>'.$value["ultimo_login"].'</td>
+                        <td>
+
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-secondary btn-sm"> <i class="fas fa-user-edit"></i> </button>
+                            <button type="button" class="btn btn-danger btn-sm"> <i class="fas fa-user-times"></i> </button>
                       </div>
-                    </td>
-                  </tr>
+      
+      
+                        </td>
+      
+                      </tr>';
+                     
+                      }
+
+                    
+                    ?>
+
+                  
                   
                   </tbody>
                  
