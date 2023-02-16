@@ -41,7 +41,86 @@ class ControladorUsuarios{
             }
 
         }
+
+
+
+/*=============================================
+	REGISTRO DE USUARIO
+	=============================================*/
+
+	static public function ctrCrearUsuario(){
+        if(isset($_POST["nuevoUsuario"])){
+            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombre"]) &&
+			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoUsuario"]) &&
+			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"])){
+
+                $tabla = "usuarios";
+                $datos = array("nombre" => $_POST["nuevoNombre"],
+					           "usuario" => $_POST["nuevoUsuario"],
+					           "password" => $_POST["nuevoPassword"],
+					           "perfil" => $_POST["nuevoPerfil"]);
+                
+                 $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
+                 if($respuesta == "ok"){
+                    echo '<script>
+
+					swal.fire({
+                        position: "bottom-end",
+                        icon: "success",
+                        title: "Usuario creado correctamente",
+                        showConfirmButton: false,
+                        timer: 1800
+
+					}).then(function(result){
+
+						if(result.value){
+						
+							window.location = "usuarios";
+
+						}
+
+					});
+				
+
+					</script>';
+                 }
+
+
+
+               }else{
+
+                echo '<script>
+
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
+                    confirmButtonColor: "#007bff",
+                    confirmButtonText: "Aceptar" ,
+
+                }).then(function(result){
+
+                    if(result.value){
+                    
+                        window.location = "usuarios";
+
+                    }
+
+                });
+            
+
+            </script>';
+
+               }
+
+        }
+
     }
+
+
+
+
+}
 
 
 
