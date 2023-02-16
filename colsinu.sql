@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-02-2023 a las 20:36:50
+-- Tiempo de generación: 16-02-2023 a las 21:07:57
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -43,7 +43,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Carlos Villadiego', 'admin', 'admin123', 'Administrador', 1, '2018-02-06 17:25:57', '2023-02-15 14:23:05');
+(1, 'Carlos Villadiego', 'admin', 'admin123', 'Administrador', 1, '2018-02-06 17:25:57', '2023-02-15 14:23:05'),
+(60, 'Eva Vargas', 'evae', 'eva123', 'Radicador', 0, '0000-00-00 00:00:00', '2023-02-16 05:30:25'),
+(62, 'Ana Julio', 'anaj', '$2a$07$asxx54ahjppf45sd87a5au/h1MFU4KIhMn9rG8GdPuIbo0libbdou', 'Radicador', 0, '0000-00-00 00:00:00', '2023-02-16 05:30:48'),
+(63, 'Franky Villadiego', 'fjvilladiego', '$2a$07$asxx54ahjppf45sd87a5auGbXatIj1eAxiXxoy8fM8E797q8J8zNm', 'Administrador', 0, '0000-00-00 00:00:00', '2023-02-16 05:02:10'),
+(64, 'Richard Doaria', 'rdoria', '$2a$07$asxx54ahjppf45sd87a5auL6qXEp9WiLL//XhOnRT4IL8TJk0ngW6', 'Paramedico', 0, '0000-00-00 00:00:00', '2023-02-16 05:53:59'),
+(65, 'Dayana Lopez', 'Dlopez', '$2a$07$asxx54ahjppf45sd87a5au1xp2cg.E5BkuaCrZmqfwG2HtCmhyuR2', 'Auxiliar', 0, '0000-00-00 00:00:00', '2023-02-16 20:05:51');
 
 --
 -- Índices para tablas volcadas
@@ -63,7 +68,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
