@@ -100,7 +100,7 @@
   <!-- MODAL AGREGAR USUARIO -->
 
   <div class="modal fade" id="modalAgregarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
       <form role="form" method="post" enctype="multipart/form-data">
@@ -112,58 +112,126 @@
             </button>
           </div>
           <div class="modal-body">
+            <div class="row">
 
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-id-card-alt"></i> </span>
-            </div>
-            <input type="text" class="form-control" name="nuevoNombre" placeholder="Ingresar nombre y apellido" required>
-          </div>
+                      <!-- CAMPO CEDULA -->
+                <div class="col-md-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-id-card-alt"></i> </span>
+                  </div>
+                  <input type="text" class="form-control" name="nuevoDocumento" placeholder="N° de cedula" required>
+                </div>
+                </div>
 
-          <div class="input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-fingerprint"></i> </span>
-            </div>
-            <input type="text" class="form-control" name="nuevoUsuario" placeholder="Ingresar usuario" required>
-          </div>
+                <!-- CAMPO NOMBRE COMPPLETO -->
+                <div class="col-md-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-id-card-alt"></i> </span>
+                  </div>
+                  <input type="text" class="form-control" name="nuevoNombre" placeholder="Nombre completo" required>
+                  </div>
+                </div>
+
+                <!-- CAMPO TELEFONO -->
+                <div class="col-md-6">
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-phone"></i> </span>
+                  </div>
+                  <input type="text" class="form-control" name="nuevoTelefono" placeholder="Telefono" required>
+                  </div>
+                </div>
+
+                <!-- CAMPO EMAIL -->
+                <div class="col-md-6">
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-envelope"></i> </span>
+                  </div>
+                  <input type="email" class="form-control" name="nuevoEmail" placeholder="Correo electronico" required>
+                  </div>
+                </div>
+
+                <!-- CAMPO TIPO DE SANGRE -->
+                <div class="col-md-6">
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-user-alt-slash"></i> </span>
+                  </div>
+                  <input type="text" class="form-control" name="nuevoTipo" placeholder="Tipo de sangre" required>
+                  </div>
+                </div>
+
+                  <!-- CAMPO FECHA NACIMIENTO -->
+                  <div class="col-md-6">
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-calendar-alt"></i> </span>
+                  </div>
+                  <input type="date" class="form-control" name="nuevoFecha" placeholder="Tipo de sangre" required>
+                  </div>
+                </div>
+
+                 <!-- CAMPO USUARIO DEL SISTEMA -->
+                 <div class="col-md-6">
+                      <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-lock"></i> </span>
+                    </div>
+                    <input type="text" class="form-control" name="nuevoUsuario" placeholder="Ingresar usuario" required>
+                  </div>
+                
+                </div>
+
+                   <!-- CAMPO USUARIO DEL CONTRASEÑA -->
+                   <div class="col-md-6">
+                        <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-key"></i> </span>
+                    </div>
+                    <input type="password" class="form-control" name="nuevoPassword" placeholder="Ingresar contraseña" required>
+                  </div>
+                    
+                
+                </div>
 
 
-          <div class="input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-key"></i> </span>
-            </div>
-            <input type="password" class="form-control" name="nuevoPassword" placeholder="Ingresar contraseña" required>
-          </div>
+                 <!-- CAMPO USUARIO DEL PERFIL -->
+                 <div class="col-md-12">
+
+                 <div class="input-group mt-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-key"></i> </span>
+                </div>
+                <select class="form-control input-lg" name="nuevoPerfil">
+                          
+                          <option value="">Selecionar perfil</option>
+
+                          <option value="Administrador">Administrador</option>
+
+                          <option value="Paramedico">Paramedico</option>
+
+                          <option value="Radio Operador">Radio Operador</option>
+
+                          <option value="Radicador">Radicador</option>
+
+                          <option value="Auxiliar">Auxiliar</option>
+
+                  </select>
+            
+              </div>
+                </div>
 
 
-          <div class="input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-key"></i> </span>
-            </div>
-            <select class="form-control input-lg" name="nuevoPerfil">
-                      
-                      <option value="">Selecionar perfil</option>
 
-                      <option value="Administrador">Administrador</option>
-
-                      <option value="Paramedico">Paramedico</option>
-
-                      <option value="Radio Operador">Radio Operador</option>
-
-                      <option value="Radicador">Radicador</option>
-
-                      <option value="Auxiliar">Auxiliar</option>
-
-              </select>
-        
-          </div>
-
-
-          
+            </div> 
+            <!-- fin del row -->
             
           </div>
           <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-secondary">Guardar usuario</button>
             
           </div>
