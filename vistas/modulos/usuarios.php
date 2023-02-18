@@ -160,7 +160,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-user-alt-slash"></i> </span>
                   </div>
-                  <input type="text" class="form-control" name="nuevoTipo" placeholder="Tipo de sangre" required>
+                  <input type="text" class="form-control" name="nuevoTipo" placeholder="Tipo de sangre" required maxlength="3">
                   </div>
                 </div>
 
@@ -185,7 +185,7 @@
                 
                 </div>
 
-                   <!-- CAMPO USUARIO DEL CONTRASEÑA -->
+                   <!-- CAMPO  CONTRASEÑA DEL USUARIO DEL SISTEMA -->
                    <div class="col-md-6">
                         <div class="input-group mt-3">
                     <div class="input-group-prepend">
@@ -222,6 +222,32 @@
                   </select>
             
               </div>
+                </div>
+
+                <div class="col-md-12 mt-3">
+                  <h5 class="text-danger">*Datos de contacto en caso de emergencia:</h5>
+                </div>
+
+                  <!-- CAMPO NOMBRE CONACTO EMERGENCIA -->
+                  <div class="col-md-6">
+                      <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-user-friends"></i> </span>
+                    </div>
+                    <input type="text" class="form-control" name="nuevoNombreFamiliar" placeholder="Nombre completo" required>
+                  </div>
+                
+                </div>
+
+                <!-- CAMPO TELEFONO CONACTO EMERGENCIA -->
+                <div class="col-md-6">
+                      <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend"> <i class="fas fa-phone"></i> </span>
+                    </div>
+                    <input type="text" class="form-control" name="nuevoTelefonoFamiliar" placeholder="Telefono" required>
+                  </div>
+                
                 </div>
 
 
