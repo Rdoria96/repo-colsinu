@@ -550,7 +550,7 @@
           <!-- FINAL DEL MODAL BODY -->
           <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-secondary">Guardar usuario</button>
+          <button type="submit" class="btn btn-secondary">Guardar formato</button>
             
           </div>
 
