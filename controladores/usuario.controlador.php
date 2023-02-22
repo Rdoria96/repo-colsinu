@@ -91,26 +91,40 @@ class ControladorUsuarios{
                                if($respuesta == "ok"){
               
                                   echo '<script>
-              
-                              Swal.fire({
-                                  icon: "success",
-                                  title: "Exito!",
-                                  text: "¡El usuario se ha creado correctamente!",
-                                  confirmButtonColor: "#007bff",
-                                  confirmButtonText: "Aceptar" ,
-              
-                              }).then(function(result){
-              
-                                  if(result.value){
+
+                                  Swal.fire({
+                                    title: "Crear usuario!",
+                                    text: "¿Esta seguro de crear este usuario?",
+                                    icon: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonColor: "#007bff",
+                                    cancelButtonColor: "#d33",
+                                    confirmButtonText: "Si, crear usuario!"
+                                  })
+                                  .then( (result) =>{
+                                     if (result.isConfirmed) {
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "Your work has been saved",
+                                        showConfirmButton: false,
+                                        timer: 1900
+                                  })
                                   
-                                      window.location = "usuarios";
-              
-                                  }
-              
-                              });
+                               
+                                  
+                                  
+                                  
+                                     }
+
+                                     
+                                  
+                                  })
+
+                                  
                           
               
-                          </script>';
+                                </script>';
                                   
                                }
               

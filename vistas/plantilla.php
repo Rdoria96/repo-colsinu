@@ -73,6 +73,7 @@ session_start();
     if(isset($_GET["ruta"])){
       if($_GET["ruta"] == "inicio" ||
         $_GET["ruta"] == "usuarios" ||
+        $_GET["ruta"] == "aph" ||
         $_GET["ruta"] == "salir"){
 
           include "modulos/".$_GET["ruta"].".php";
